@@ -37,7 +37,7 @@ var configure = function configure () {
 
 var bundle = function bundle () {
     return new BPromise((resolve, reject) => {
-        gulp.src("__BUILD__/bundle/**/*")
+        gulp.src(["__BUILD__/bundle/**/*", "__BUILD__/bundle/.env"])
             .pipe(zip("bundle.zip"))
             .pipe(gulp.dest("__BUILD__/"))
             .on("end", resolve)
