@@ -68,8 +68,8 @@ DB_PASS=s1mpl3
 which can be loaded by the lambda function with:
 
 ```js
-import {load} from "dotenv";
-load();
+import dotenv from "dotenv";
+dotenv.load();
 
 export function handler (event, context) {
     context.succeed(JSON.stringify(process.env));
