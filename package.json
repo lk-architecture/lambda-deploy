@@ -1,0 +1,34 @@
+{
+  "name": "lambda-deploy",
+  "version": "1.0.0",
+  "description": "Deploy lambda function",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "gulp",
+    "lint": "gulp lint",
+    "test": "gulp test"
+  },
+  "author": "Team Wattellina <wattellina@mondora.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "babel": "^5.8.9",
+    "babel-core": "^5.8.9",
+    "babel-plugin-rewire": "^0.1.12",
+    "chai": "^3.2.0",
+    "eslint": "^0.24.1",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^0.15.0",
+    "gulp-spawn-mocha": "^2.2.1",
+    "mocha": "^2.2.5",
+    "proxyquire": "^1.6.0",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1.40",
+    "bluebird": "^2.9.34",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-zip": "^3.0.2"
+  }
+}
