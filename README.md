@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/innowatio/lambda-deploy.svg?branch=master)](https://travis-ci.org/innowatio/lambda-deploy)
+[![Dependency Status](https://david-dm.org/innowatio/lambda-deploy.svg)](https://david-dm.org/innowatio/lambda-deploy)
+[![devDependency Status](https://david-dm.org/innowatio/lambda-deploy/dev-status.svg)](https://david-dm.org/innowatio/lambda-deploy#info=devDependencies)
+
 # Lambda deploy
 
 ### Workflow

@@ -1,7 +1,7 @@
 {
   "name": "lambda-deploy",
   "version": "1.0.0",
-  "description": "Deploy lambda function",
+  "description": "Deploy lambda functions",
   "main": "src/index.js",
   "scripts": {
     "dev": "gulp",
