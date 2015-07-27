@@ -20,10 +20,10 @@ describe("`configure`", function () {
 
     it("calls `s3.upload` with the correct parameters", function () {
         var configure = lambdaDeploy.__get__("configure");
-        process.env["FUNC_CONFIG:A"] = "A";
-        process.env["FUNC_CONFIG:B"] = "B";
-        process.env["FUNC_CONFIG:C"] = "C";
-        process.env["FUNC_CONFIG:D"] = "D";
+        process.env.__FUNC_CONFIG__A = "A";
+        process.env.__FUNC_CONFIG__B = "B";
+        process.env.__FUNC_CONFIG__C = "C";
+        process.env.__FUNC_CONFIG__D = "D";
         configure();
         expect(writeFileSync.firstCall.args[1]).to.equal([
             "A=A",

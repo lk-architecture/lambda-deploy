@@ -27,7 +27,7 @@ var install = function install () {
 };
 
 var configure = function configure () {
-    var prefix = "FUNC_CONFIG:";
+    var prefix = "__FUNC_CONFIG__";
     var env = Object.keys(process.env)
         .filter(key => key.slice(0, prefix.length) === prefix)
         .map(key => key.slice(prefix.length) + "=" + process.env[key])

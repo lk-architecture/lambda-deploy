@@ -45,7 +45,7 @@ settings (where they are kept secret).
 #### Runtime configuration
 
 To pass runtime configurations to the function, set environment variables
-prefixed by `FUNC_CONFIG:`. Those will be collected and written to the `.env`
+prefixed by `__FUNC_CONFIG__`. Those will be collected and written to the `.env`
 file from where they can be loaded using [dotenv](https://github.com/motdotla/dotenv).
 
 For example, if we define the following environment variables in the build
