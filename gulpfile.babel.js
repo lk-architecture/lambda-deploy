@@ -1,6 +1,13 @@
-var gulp   = require("gulp");
-var eslint = require("gulp-eslint");
-var mocha  = require("gulp-spawn-mocha");
+import gulp from "gulp";
+import babel from "gulp-babel";
+import eslint from "gulp-eslint";
+import mocha from "gulp-spawn-mocha";
+
+gulp.task("build", function () {
+    return gulp.src("src/**/*.js")
+        .pipe(babel())
+        .pipe(gulp.dest("dist/"));
+});
 
 gulp.task("test", function () {
     return gulp.src(["test/unit/**/*.js"], {read: false})

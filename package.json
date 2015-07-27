@@ -2,10 +2,12 @@
   "name": "lambda-deploy",
   "version": "1.0.0",
   "description": "Deploy lambda functions",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "gulp build",
     "dev": "gulp",
     "lint": "gulp lint",
+    "prepublish": "gulp build",
     "test": "gulp test"
   },
   "author": "Team Wattellina <wattellina@mondora.com>",
