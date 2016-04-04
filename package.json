@@ -2,26 +2,36 @@
   "name": "lambda-deploy",
   "version": "2.1.0",
   "description": "Deploy lambda functions",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "gulp build",
-    "dev": "gulp",
-    "lint": "gulp lint",
-    "prepublish": "gulp build",
-    "test": "gulp test"
+    "build": "babel src --out-dir lib",
+    "codecov": "codecov",
+    "lint": "eslint src test",
+    "prestart": "npm run build",
+    "start": "NODE_PATH=src node lib/index.js",
+    "test": "NODE_PATH=src NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive --require babel-polyfill",
+    "dev:server": "NODE_PATH=src node_modules/.bin/babel-node src/index.js | bunyan",
+    "dev:test": "NODE_PATH=src NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require babel-polyfill --watch",
+    "dev": "npm-run-all -p dev:server"
   },
   "author": "Team Wattellina <wattellina@mondora.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "babel": "^5.8.9",
-    "babel-core": "^5.8.9",
-    "babel-plugin-rewire": "^0.1.12",
+    "babel": "^6.5.2",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-rewire": "^1.0.0-beta-3",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.2.0",
     "eslint": "^0.24.1",
+    "isparta": "^4.0.0",
     "gulp": "^3.9.0",
     "gulp-eslint": "^0.15.0",
     "gulp-spawn-mocha": "^2.2.1",
     "mocha": "^2.2.5",
+    "nodemon": "^1.9.0",
     "proxyquire": "^1.6.0",
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0"
@@ -29,8 +39,16 @@
   "dependencies": {
     "aws-sdk": "^2.1.40",
     "bluebird": "^2.9.34",
+    "body-parser": "^1.15.0",
+    "bunyan": "^1.6.0",
+    "bunyan-cloudwatch": "^2.0.0",
+    "bunyan-request": "^1.2.0",
+    "convexpress": "^1.3.3",
+    "cors": "^2.7.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
-    "gulp-zip": "^3.0.2"
+    "gulp-zip": "^3.0.2",
+    "nodegit": "^0.12.1",
+    "npm-run-all": "^1.7.0"
   }
 }
